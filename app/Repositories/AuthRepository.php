@@ -18,7 +18,7 @@ class AuthRepository {
     */
     public function createUser ($request) {
         try {
-            
+
             $validator = Validator::make($request->all(), [
                 'name' => 'required',
                 'lastname' => 'required',
@@ -36,7 +36,7 @@ class AuthRepository {
 
             return response()->json(['msg' => 'User Create Succesfully', 'user' => $user], 201);
         } catch (\Throwable $th) {
-            return response()->json(['error', $th->getMessage()]);
+            return response()->json(['errors', 'Bad Request'], 400);
         }
     }
 }

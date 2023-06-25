@@ -34,9 +34,7 @@ class AuthController extends Controller
     {
         $credentials = request(['email', 'password']);
 
-        if (! $token = auth()->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
-        }
+        if (! $token = auth()->attempt($credentials)) return response()->json(['error' => 'Unauthorized'], 401);
 
         return $this->respondWithToken($token);
     }
@@ -53,11 +51,6 @@ class AuthController extends Controller
         return response()->json(['message' => 'Successfully logged out']);
     }
 
-    /**
-     * Log the user out (Invalidate the token).
-     *
-     * @return \Illuminate\Http\JsonResponse
-    */
     public function register(Request $request)
     {
         return $this->authRepository->createUser($request);
@@ -97,5 +90,10 @@ class AuthController extends Controller
     public function me()
     {
         return response()->json(auth()->user());
+    }
+
+    public function sendPasswordReset(Request $request)
+    {
+        return $this->authRepository->sendPasswordReset($request->email);
     }
 }
