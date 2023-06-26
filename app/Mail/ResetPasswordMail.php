@@ -11,14 +11,17 @@ class ResetPasswordMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $userName, $linkCallback;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($userName, $linkCallback)
     {
-        //
+        $this->userName = $userName;
+        $this->linkCallback = $linkCallback;
     }
 
     /**
@@ -28,7 +31,8 @@ class ResetPasswordMail extends Mailable
      */
     public function build()
     {
-        return $this->from("developerwebhairton@gmail.com")
+        return $this->from("test@adoptaunpet.com")
+                    ->subject("EMCODY API Reset Password")
                     ->view('emails.passwordResetMail');
     }
 }
