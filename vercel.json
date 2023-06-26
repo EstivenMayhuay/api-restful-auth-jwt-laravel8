@@ -1,12 +1,19 @@
 {
     "version": 2,
-    "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.6.0" }
-    },
-    "routes": [{
-        "src": "/(.*)",
-        "dest": "/api/index.php"
-    }],
+    "builds": [
+        { "src": "/api/index.php", "use": "vercel-php@0.5.2" },
+        { "src": "/public/**", "use": "@vercel/static" }
+    ],
+    "routes": [
+        {
+            "src": "/(css|js|images|videos)/(.*)",
+            "dest": "public/$1/$2"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
     "env": {
         "APP_NAME": "API AUTH Laravel Vercel",
         "APP_ENV": "production",
