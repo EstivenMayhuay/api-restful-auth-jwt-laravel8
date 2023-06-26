@@ -1,7 +1,7 @@
 {
     "version": 2,
     "framework": "laravel",
-    "build": [
+    "builds": [
         {
             "src": "public",
             "use": "@vercel/laravel"
