@@ -16,10 +16,9 @@
             <video src="{{asset('/videos/video_prueba.mp4')}}" width="auto" height="300" class="w-full lg:w-10/12" controls></video>
         </section>
 
-        <sectionp class="p-4">
+        <sectionp class="p-4 flex flex-col gap-8 items-center">
             <h2 class="text-xl lg:text-2xl font-bold text-black">Repository</h2>
-
-            <button>View</button>
+            <a href="https://github.com/EstivenMayhuay/api-restful-auth-jwt-laravel8" class="px-14 bg-purple-600 text-xl font-bold text-white rounded">View</a>
         </sectionp>
     </main>
 </body>

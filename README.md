@@ -1,3 +1,3 @@
 ## **Links**
 
-- [Google Cloud Storage + Larvel](https://github.com/Superbalist/laravel-google-cloud-storage)
+- [Google Cloud Storage + Laravel](https://github.com/Superbalist/laravel-google-cloud-storage)
