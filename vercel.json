@@ -12,6 +12,16 @@
             "dest": "/api/index.php"
         }
     ],
+    "rewrites": [
+        {
+            "source": "/api/auth/(.*)",
+            "destination": "/api/index.php"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.php"
+        }
+    ],
     "env": {
         "APP_NAME": "API AUTH Laravel Vercel",
         "APP_ENV": "production",
