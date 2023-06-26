@@ -7,7 +7,7 @@
         "src": "/(.*)",
         "dest": "/api/index.php"
     }, {
-        "src": "/api/auth/*",
+        "src": "/api/auth/register",
         "dest": "/api/index.php"
     }],
     "env": {
