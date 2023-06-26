@@ -176,7 +176,10 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         // JW Tokens
-        Tymon\JWTAuth\Providers\LaravelServiceProvider::class
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+
+        // GCS
+        Superbalist\LaravelGoogleCloudStorage\GoogleCloudStorageServiceProvider::class
     ],
 
     /*

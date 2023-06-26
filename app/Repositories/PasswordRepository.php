@@ -27,7 +27,7 @@ class PasswordRepository {
     {
         try {
             $validator = Validator::make($request->all(), [
-                'email' => 'required|email|unique:users'
+                'email' => 'required|email'
             ]);
 
             if($validator->fails()) return response()->json(['errors' => json_decode($validator->errors()->toJson())], 400);

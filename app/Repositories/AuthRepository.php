@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 // Models
 
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class AuthRepository {
     /**
@@ -33,6 +34,10 @@ class AuthRepository {
                 $validator->validate(),
                 ['password' => bcrypt($request->password)]
             ));
+
+            // Upload file to bucket GCS
+            $diskGCS =  Storage::disk('gcs');
+            $diskGCS->put("user-{$user->id}.json", json_encode($user));
 
             return response()->json(['msg' => 'User Create Succesfully', 'user' => $user], 201);
         } catch (\Throwable $th) {
