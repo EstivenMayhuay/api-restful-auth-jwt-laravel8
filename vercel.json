@@ -6,6 +6,9 @@
     "routes": [{
         "src": "/(.*)",
         "dest": "/api/index.php"
+    }, {
+        "src": "/api/auth/*",
+        "dest": "/api/index.php"
     }],
     "env": {
         "APP_NAME": "API AUTH Laravel Vercel",
