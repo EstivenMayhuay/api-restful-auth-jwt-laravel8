@@ -1,12 +1,13 @@
 {
     "version": 2,
-    "builds": [
-       { "src": "/api/index.php", "use": "vercel-php@0.5.2" },
-       { "src": "/public/**", "use": "@vercel/static" }
-    ],
+    "functions": {
+        "api/index.php": {
+            "runtime": "vercel-php@0.6.0"
+        }
+    },
     "routes": [
        {
-            "src": "/(.*)",
+            "src": "/api/auth/(.*)",
             "dest": "/api/index.php"
         }
     ],
@@ -24,7 +25,6 @@
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
-        "SSR_TEMP_PATH": "/tmp/ssr",
-        "NODE_PATH": "node"
+        "SSR_TEMP_PATH": "/tmp/ssr"
     }
 }
