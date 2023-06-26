@@ -1,19 +1,16 @@
 {
     "version": 2,
-    "framework": null,
-    "functions": {
-        "api/index.php": {
-            "runtime": "vercel-php@0.6.0"
+    "framework": "laravel",
+    "build": [
+        {
+            "src": "public",
+            "use": "@vercel/laravel"
         }
-    },
-    "rewrites": [
+    ],
+    "routes": [
         {
-            "source": "/api/auth/(.*)",
-            "destination": "/api/index.php"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/index.php"
+            "src": "/api/auth/*",
+            "dest": "api/index.php"
         }
     ],
     "env": {
