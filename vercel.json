@@ -1,18 +1,12 @@
 {
     "version": 2,
-    "framework": null,
-    "builds": [
-        {
-            "src": "public",
-            "use": "@vercel/laravel"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/api/auth/*",
-            "dest": "/api/index.php"
-        }
-    ],
+    "functions": {
+        "api/*.php": { "runtime": "vercel-php@0.6.0" }
+    },
+    "routes": [{
+        "src": "/api/auth/*",
+        "dest": "/api/index.php"
+    }],
     "env": {
         "APP_NAME": "API AUTH Laravel Vercel",
         "APP_ENV": "production",
